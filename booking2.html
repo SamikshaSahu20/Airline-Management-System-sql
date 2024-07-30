@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Booking</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="myjs.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+				<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poppins">
+
+		<link rel="stylesheet" href="mycss.css">
+	</head>
+	<style type="text/css">
+		label{
+			color: white;
+		}
+	
+	
+	</style>
+	<body>
+				<nav class="navbar navbar-inverse" style="border-radius:0px !important; margin:0;border: 0">
+					<div class="container-fluid">
+						<div class="navbar-header">
+						  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+							<span class="icon-bar"></span>                       
+						  </button>
+						  <a class="navbar-brand" href="index.html">Airline-X</a>
+						</div>
+						<div class="collapse navbar-collapse" id="myNavbar">
+							<ul class="nav navbar-nav">
+								<li><a href="index.html">Home</a></li>
+								<li class="active"><a href="booking.html">Booking</a></li>
+								
+								<li><a href="contactus.html">Contact Us</a></li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></a></li>
+							</ul>
+							
+							<form class="navbar-form navbar-right">
+							  <div class="input-group">
+							    <input type="text" class="form-control" placeholder="Search">
+							    <div class="input-group-btn">
+							      <button class="btn btn-default" type="submit">
+							        <i class="glyphicon glyphicon-search"></i>
+							      </button>
+							    </div>
+							  </div>
+							</form>
+						</div>	
+					</div>
+				</nav>
+				
+				
+
+				<div class="background-wrapper" style="background-image: url(images/airline/9.jpg);">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2; /* Light grey background */
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333; /* Dark grey text color */
+    margin-bottom: 20px;
+}
+
+.passenger {
+    margin-bottom: 20px;
+}
+
+label {
+    color: #555; /* Dark grey text color */
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    width: calc(100% - 22px); /* Adjusted width for smaller inner boxes */
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #007bff; /* Blue border color when focused */
+}
+
+button[type="button"],
+button[type="submit"] {
+    background-color: #007bff; /* Blue button background color */
+    color: #fff; /* White button text color */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button[type="button"]:hover,
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+</style>
+</head>
+<body>
+<form id="passengerForm" method="post" action="passenger.php">
+<div class="container">
+    <form id="passengerForm">
+    <div id="passengerCount">
+      <label for="passengerCountInput">Number of Passengers:</label>
+      <input type="number" id="passengerCountInput" name="passengerCount" min="1" required>
+      <button type="button" onclick="generatePassengerFields()">Generate Fields</button>
+    </div>
+  </form>
+</div>
+
+<script>
+function generatePassengerFields() {
+  var passengerCount = document.getElementById('passengerCountInput').value;
+  var passengerForm = document.getElementById('passengerForm');
+  // Clear previous fields if any
+  passengerForm.innerHTML = '<h2>Passenger Information</h2>';
+  // Generate input fields for each passenger
+  for (var i = 1; i <= passengerCount; i++) {
+    var div = document.createElement('div');
+    div.className = 'passenger';
+    div.innerHTML = `
+      <h3>Passenger ${i}</h3>
+      <label for="firstName${i}">First Name:</label>
+      <input type="text" id="firstName${i}" name="firstName${i}" required><br>
+      <label for="lastName${i}">Last Name:</label>
+      <input type="text" id="lastName${i}" name="lastName${i}" required><br>
+      <label for="age${i}">Age:</label>
+      <input type="text" id="age${i}" name="age${i}" required><br>
+      <label for="gender${i}">Gender:</label>
+      <input type="text" id="gender${i}" name="gender${i}" required><br>
+      <label for="email${i}">Email:</label>
+      <input type="email" id="email${i}" name="email${i}" required><br>
+      <label for="mobile${i}">Mobile Number:</label>
+      <input type="text" id="mobile${i}" name="mobile${i}" required><br>
+      <label for="address${i}">Address:</label>
+      <input type="text" id="address${i}" name="address${i}" required><br>
+      <label for="city${i}">City:</label>
+      <input type="text" id="city${i}" name="city${i}" required><br>
+      <label for="state${i}">State:</label>
+      <input type="text" id="state${i}" name="state${i}" required><br>
+      <label for="pincode${i}">Pincode:</label>
+      <input type="text" id="pincode${i}" name="pincode${i}" required><br>
+      <label for="country${i}">Country:</label>
+      <input type="text" id="country${i}" name="country${i}" required><br><br>`;
+    passengerForm.appendChild(div);
+  }
+  // Add submit button
+  var submitButton = document.createElement('button');
+  submitButton.type = 'submit';
+  submitButton.textContent = 'Submit';
+  passengerForm.appendChild(submitButton);
+  
+  // Add event listener to submit button
+  submitButton.addEventListener('click', function() {
+    // Redirect to itinerary.html
+    window.location.href = 'details.php';
+  });
+}
+</script>
+			<!-- Footer -->
+			<footer id="footer">
+				<div class="container-fluid">
+					<ul class="icons">
+						<li><a href="#" class="fa fa-twitter" style="color: grey"></a></li>
+						<li><a href="#" class="fa fa-facebook" style="color: grey"></a></li>
+						<li><a href="#" class="fa fa-instagram" style="color: grey"></a></li>
+						<li><a href="#" class="fa fa-envelope" style="color: grey"></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; Airline-X. All rights reserved.
+				</div>
+			</footer>
+
+	</body>
+</html>
+
+

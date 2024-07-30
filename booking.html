@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Booking</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="myjs.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+				<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poppins">
+
+		<link rel="stylesheet" href="mycss.css">
+	</head>
+	<style type="text/css">
+				label{
+			color: white;
+		}
+.background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.item.active img {
+    width: 100%;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Set a higher z-index to ensure it's displayed above the background image */
+}
+
+	</style>
+	<body>
+<div class="item active">
+								<img src="C:\Users\Sakshi\Documents\MYSQL SEM4\Project2\Airline-Management-System\images\1.jpeg" width="99%">
+	</div>							
+
+				<nav class="navbar navbar-inverse" style="border-radius:0px !important; margin:0;border: 0">
+					<div class="container-fluid">
+						<div class="navbar-header">
+						  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+							<span class="icon-bar"></span>                       
+						  </button>
+						  <a class="navbar-brand" href="index.html">Airline-X</a>
+						</div>
+						<div class="collapse navbar-collapse" id="myNavbar">
+							<ul class="nav navbar-nav">
+								<li><a href="index.html">Home</a></li>
+								<li class="active"><a href="booking.html">Booking</a></li>
+								
+								<li><a href="contactus.html">Contact Us</a></li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></a></li>
+							</ul>
+							
+							<form class="navbar-form navbar-right">
+							  <div class="input-group">
+							    <input type="text" class="form-control" placeholder="Search">
+							    <div class="input-group-btn">
+							      <button class="btn btn-default" type="submit">
+							        <i class="glyphicon glyphicon-search"></i>
+							      </button>
+							    </div>
+							  </div>
+							</form>
+						</div>	
+					</div>
+				</nav>
+				
+				<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #444;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #666;
+    color: #fff;
+  }
+  
+  th {
+    background-color: #222;
+  }
+  
+  tr:hover {
+    background-color: #555;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  h2 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Flight Schedule</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>From</th>
+        <th>To</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Seats Available</th>
+         <td><button onclick="bookFlight()">Book</button></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>New York</td>
+        <td>Los Angeles</td>
+        <td>2024-03-22</td>
+        <td>09:00 AM</td>
+        <td>15</td>
+          <td><button onclick="bookFlight()">Book</button></td>
+      </tr>
+      <tr>
+        <td>Los Angeles</td>
+        <td>New York</td>
+        <td>2024-03-23</td>
+        <td>11:30 AM</td>
+        <td>20</td>
+       <td><button onclick="bookFlight()">Book</button></td>
+      </tr>
+      <tr>
+        <td>Chicago</td>
+        <td>Miami</td>
+        <td>2024-03-24</td>
+        <td>02:00 PM</td>
+        <td>10</td>
+         <td><button onclick="bookFlight()">Book</button></td>
+      </tr>
+    <tr>
+  <td>Mumbai</td>
+  <td>Delhi</td>
+  <td>2024-03-25</td>
+  <td>08:45 AM</td>
+  <td>30</td>
+  <td><button onclick="bookFlight()">Book</button></td></tr>
+<tr>
+  <td>Delhi</td>
+  <td>Bangalore</td>
+  <td>2024-03-26</td>
+  <td>10:15 AM</td>
+  <td>25</td>
+   <td><button onclick="bookFlight()">Book</button></td>
+</tr>
+<tr>
+  <td>Bangalore</td>
+  <td>Kolkata</td>
+  <td>2024-03-27</td>
+  <td>12:30 PM</td>
+  <td>20</td>
+    <td><button onclick="bookFlight()">Book</button></td>
+</tr>
+<tr>
+  <td>Chennai</td>
+  <td>Hyderabad</td>
+  <td>2024-03-28</td>
+  <td>09:00 AM</td>
+  <td>15</td>
+   <td><button onclick="bookFlight()">Book</button></td>
+</tr>
+<tr>
+  <td>Hyderabad</td>
+  <td>Jaipur</td>
+  <td>2024-03-29</td>
+  <td>11:30 AM</td>
+  <td>20</td>
+    <td><button onclick="bookFlight()">Book</button></td>
+</tr>
+<tr>
+  <td>Jaipur</td>
+  <td>Goa</td>
+  <td>2024-03-30</td>
+  <td>02:00 PM</td>
+  <td>10</td>
+    <td><button onclick="bookFlight()">Book</button></td>
+</tr>
+<tr>
+  <td>Goa</td>
+  <td>Ahmedabad</td>
+  <td>2024-03-31</td>
+  <td>04:45 PM</td>
+  <td>25</td>
+   <td><button onclick="bookFlight()">Book</button></td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+
+<script>
+function bookFlight() {
+    // Redirect to the booking page
+    window.location.href = "booking2.html";
+}
+</script>
+
+
+			<!-- Footer -->
+			<footer id="footer">
+				<div class="container-fluid">
+					<ul class="icons">
+						<li><a href="#" class="fa fa-twitter" style="color: grey"></a></li>
+						<li><a href="#" class="fa fa-facebook" style="color: grey"></a></li>
+						<li><a href="#" class="fa fa-instagram" style="color: grey"></a></li>
+						<li><a href="#" class="fa fa-envelope" style="color: grey"></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; Airline-X. All rights reserved.
+				</div>
+			</footer>
+
+	</body>
+</html>
